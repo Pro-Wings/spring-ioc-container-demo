@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+
+ <bean id="std1" name="stud1" class="com.prowings.models.Student">
+ <property name="roll" value="10"></property>
+ <property name="name" value="Ram"></property>
+ <property name="address">
+ 	<ref bean="addr"/>
+ </property>
+ </bean>
+ 
+  <bean id="std2" class="com.prowings.models.Student">
+  <constructor-arg name="name" value="Sham" />
+  <constructor-arg >
+  	<ref bean= "addr" />
+  </constructor-arg>
+  <constructor-arg name="roll" value="20" />
+ </bean>
+
+  <bean id="emp1" class="com.prowings.models.Employee">
+  <constructor-arg value="20" index="0" />
+  <constructor-arg value="IT" index="2" />
+  <constructor-arg value="Sham" index="1" />
+ </bean>
+
+  <bean id="emp2" class="com.prowings.models.Employee">
+  <constructor-arg value="20" type="int"/>
+  <constructor-arg value="IT" />
+ </bean>
+
+
+ <bean id="addr" class="com.prowings.models.Address">
+ <property name="pin" value="123"></property>
+ <property name="city" value="Pune"></property>
+ </bean>
+
+ <bean id="addr2" class="com.prowings.models.Address">
+ <constructor-arg name="pin" value="456" />
+ <constructor-arg name="city" value="Mumbai" />
+ </bean>
+
+</beans>

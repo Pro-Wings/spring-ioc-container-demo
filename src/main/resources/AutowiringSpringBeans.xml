@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="std1" name="stud1" class="com.prowings.autowiring.Student" autowire="byType">
+ <property name="roll" value="10"></property>
+ <property name="name" value="Ram"></property>
+ </bean>
+ 
+<!--  <bean id="std1" name="stud1" class="com.prowings.autowiring.Student" autowire="constructor">
+ <constructor-arg name="roll" value="10" />
+ <constructor-arg name="name" value="Ram" />
+ </bean> -->
+
+ <bean id="address" class="com.prowings.autowiring.Address" primary="true"> 
+ <property name="pin" value="123"></property>
+ <property name="street" value="M G Road"></property>
+ <property name="city" value="Pune"></property>
+ </bean>
+
+<bean id="addr" class="com.prowings.autowiring.Address" >
+ <property name="pin" value="456"></property>
+ <property name="street" value="A B Road"></property>
+ <property name="city" value="Dekkan"></property>
+ </bean>
+ 
+</beans>
