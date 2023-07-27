@@ -1,5 +1,7 @@
 package com.prowings.autowiring;
 
+import java.util.Arrays;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -13,6 +15,17 @@ public class TestAutowiring {
 
 		System.out.println(s1);
 		
+		System.out.println("Total Beans in container :" +context.getBeanDefinitionCount());
+		
+		String[] beanNames = context.getBeanDefinitionNames();
+		
+		System.out.println(Arrays.toString(beanNames));
+		
+		int addrBeanCount = context.getBeanNamesForType(Address.class).length;
+		
+		System.out.println("Total Number of Address Beans : "+addrBeanCount);
+		
+		System.out.println(s1.beanCount);
 	}
 
 }

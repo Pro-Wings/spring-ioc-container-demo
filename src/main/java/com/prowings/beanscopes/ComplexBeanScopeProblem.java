@@ -20,7 +20,6 @@ public class ComplexBeanScopeProblem {
 
 		System.out.println(audi1.getEngine() == audi2.getEngine());
 		
-		
 	}
 
 }

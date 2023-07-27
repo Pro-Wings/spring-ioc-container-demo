@@ -1,51 +1,39 @@
-package com.prowings.autowiring;
+package com.prowings.beanlifecycle;
 
-public class Student {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Student implements InitializingBean, DisposableBean{
 	
 	int roll;
 	String name;
 	Address address;
-	
-	static int beanCount = 0;
-
 	public Student() {
 		super();
-		beanCount++;
+		// TODO Auto-generated constructor stub
 	}
-	
 	public Student(int roll, String name, Address address) {
 		super();
 		this.roll = roll;
 		this.name = name;
 		this.address = address;
 	}
-
-	public Student(Address address) {
-		super();
-		this.address = address;
-	}
-
-
-
 	public int getRoll() {
 		return roll;
 	}
 	public void setRoll(int roll) {
-		System.out.println("setting roll via setter");
 		this.roll = roll;
 	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
-		System.out.println("setting name via setter");
 		this.name = name;
 	}
 	public Address getAddress() {
 		return address;
 	}
 	public void setAddress(Address address) {
-		System.out.println("setting address via setter");
 		this.address = address;
 	}
 	@Override
@@ -53,11 +41,16 @@ public class Student {
 		return "Student [roll=" + roll + ", name=" + name + ", address=" + address + "]";
 	}
 
-//	@Override
-//	public String toString() {
-//		return "Student [address=" + address + "]";
-//	}
+	public void destroy() throws Exception {
+		
+		System.out.println("========Before destruction of student bean=========");
+		
+	}
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("========Initializing the student bean=========");
+		
+	}
+	
+	
 
-	
-	
 }

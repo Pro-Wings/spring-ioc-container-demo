@@ -8,6 +8,13 @@
  <property name="roll" value="10"></property>
  <property name="name" value="Ram"></property>
  </bean>
+
+
+<bean id="std2" class="com.prowings.autowiring.Student" autowire="byName">
+ <property name="roll" value="20"></property>
+ <property name="name" value="Sham"></property>
+ </bean>
+
  
 <!--  <bean id="std1" name="stud1" class="com.prowings.autowiring.Student" autowire="constructor">
  <constructor-arg name="roll" value="10" />
