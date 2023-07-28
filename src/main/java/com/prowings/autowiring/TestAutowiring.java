@@ -26,6 +26,9 @@ public class TestAutowiring {
 		System.out.println("Total Number of Address Beans : "+addrBeanCount);
 		
 		System.out.println(s1.beanCount);
+		
+		MyDatabaseDetails dbdetails = context.getBean("dbProps",MyDatabaseDetails.class);
+		System.out.println(dbdetails);
 	}
 
 }
